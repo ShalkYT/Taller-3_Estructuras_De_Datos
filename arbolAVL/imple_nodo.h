@@ -1,5 +1,3 @@
-#include "nodo.h"
-
 template <typename T>
 Nodo<T>::Nodo(T valor) {
     dato = valor;
@@ -20,6 +18,6 @@ int Nodo<T>::obtenerAltura(){
         int alturaDerecha = derecha->obtenerAltura();
         return 1 + std::max(alturaIzquierda, alturaDerecha);
     }else{
-        return 0;
+        return 1;
     }
 }

@@ -9,9 +9,19 @@ template <typename T>
 class arbolAVL {
 
     private:
-        nodo<T>* Raiz;
+        Nodo<T>* Raiz;
+
+        int balance(Nodo<T>* n);
+        void rotarDerecha(Nodo<T>* &n);
+        void rotarIzquierda(Nodo<T>* &n);
+        void insertar(T dato);
+        void buscar(T dato);
+        void eliminar(T dato);
 
     public:
+        arbolAVL();
+
+
 
 };
 
