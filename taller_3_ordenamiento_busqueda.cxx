@@ -18,10 +18,10 @@
 #include <iomanip>   // std::setw, std::fixed, std::setprecision
 
 // TODO #01: Incluir cabecera de la implementación propia del árbol AVL
-// #include "arbolAVL.h"
+#include "arbolAVL/arbolAVL.h"
 
 // TODO #06: Incluir cabecera de la STL correspondiente al árbol rojinegro
-// #include "arbolRN.h"
+#include "arbolRN/arbolRN.h"
 
 // TODO #11: Incluir cabecera de la STL correspondiente al montículo
 // #include "monticulo.h"

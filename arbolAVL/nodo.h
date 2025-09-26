@@ -1,13 +1,14 @@
 #ifndef NODO_H
 #define NODO_H
 
+template <typename T>
 struct Nodo {
-    int dato;
+    T dato;
     Nodo* izquierda;
     Nodo* derecha;
-    int altura;
 
-    Nodo(int valor);
+    Nodo(T valor);
+    int obtenerAltura();
 };
 
-#endif
+#endif // NODO_H
