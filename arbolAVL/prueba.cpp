@@ -1,8 +1,9 @@
 #include <iostream>
 #include "arbolAVL.h"
+using namespace std;
 
 int main() {
-    AVLTree arbol;
+    arbolAVL<int> arbol;
 
     cout << "Insertando elementos en el AVL..." << endl;
     int valores[] = {10, 20, 30, 40, 50, 25};
@@ -16,8 +17,7 @@ int main() {
 
     cout << "\nRecorridos después de las inserciones:" << endl;
     cout << "InOrden: ";  arbol.inOrden();
-    cout << "PreOrden: "; arbol.preOrden();
-    cout << "PosOrden: "; arbol.posOrden();
+
 
     cout << "\nEliminando el nodo 30..." << endl;
     arbol.eliminar(30);
@@ -29,8 +29,6 @@ int main() {
 
     cout << "\nRecorridos después de la eliminación:" << endl;
     cout << "InOrden: ";  arbol.inOrden();
-    cout << "PreOrden: "; arbol.preOrden();
-    cout << "PosOrden: "; arbol.posOrden();
 
     return 0;
 }

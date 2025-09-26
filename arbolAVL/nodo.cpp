@@ -1,3 +1,5 @@
+#include "arbolAVL.h"
+
 template <typename T>
 Nodo<T>::Nodo(T valor) {
     dato = valor;

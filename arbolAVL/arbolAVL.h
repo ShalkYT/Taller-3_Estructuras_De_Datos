@@ -14,15 +14,22 @@ class arbolAVL {
         int balance(Nodo<T>* n);
         void rotarDerecha(Nodo<T>* &n);
         void rotarIzquierda(Nodo<T>* &n);
-        void insertar(T dato);
-        void buscar(T dato);
-        void eliminar(T dato);
+        void insertar(Nodo<T>* &n, T dato);
+        void eliminar(Nodo<T>* &N, T dato);
+        void inOrden(Nodo<T>* n);
 
     public:
         arbolAVL();
-
+        void insertar(T dato);
+        void eliminar(T dato);
+        T obtenerRaiz();
+        int obtenerAltura();
+        int obtenerBalanceRaiz();
+        void inOrden();
 
 
 };
+
+#include "arbolAVL.cpp"
 
 #endif // ARBOLAVL_H
