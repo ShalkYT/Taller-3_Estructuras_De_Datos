@@ -24,7 +24,7 @@
 #include "arbolRN/arbolRN.h"
 
 // TODO #11: Incluir cabecera de la STL correspondiente al montículo
-// #include "monticulo.h"
+#include "monticulo.h"
 
 typedef std::list<std::string> TList;
 
