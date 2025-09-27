@@ -93,7 +93,9 @@ void monticulo<T>::hundir(size_t indice) {
 
 // Constructor: crea un montículo vacío especificando el tipo (max-heap o min-heap)
 template <typename T>
-monticulo<T>::monticulo(bool maxHeap) : esMaxHeap(maxHeap) {}
+monticulo<T>::monticulo(bool maxHeap) {
+    esMaxHeap = maxHeap;
+}
 
 // Insertar un nuevo elemento en el montículo
 template <typename T>
