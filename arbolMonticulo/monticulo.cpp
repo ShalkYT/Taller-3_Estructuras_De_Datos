@@ -159,15 +159,12 @@ size_t monticulo<T>::size() const {
 // Función auxiliar recursiva para recorrido inorden
 template <typename T>
 void monticulo<T>::inordenRecursivo(size_t indice, std::list<T>& lista) const {
-    // Caso base: índice fuera de rango
     if (indice >= heap.size()) return;
     
-    // Recorrer subárbol izquierdo
-    inordenRecursivo(hijoIzquierdo(indice), lista);
-    // Visitar nodo actual (agregar a la lista)
-    lista.push_back(heap[indice]);
-    // Recorrer subárbol derecho
-    inordenRecursivo(hijoDerecho(indice), lista);
+    // CORRECTO: izquierda - raíz - derecha
+    inordenRecursivo(hijoIzquierdo(indice), lista);  // izquierda
+    lista.push_back(heap[indice]);                   // raíz  
+    inordenRecursivo(hijoDerecho(indice), lista);    // derecha
 }
 
 // Función pública para obtener el recorrido inorden del montículo
