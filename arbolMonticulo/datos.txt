@@ -1,0 +1,48 @@
+PRUEBA DEL MONTICULO (HEAP)
+============================
+
+=== PROBANDO MAX-HEAP ===
+Insertando elementos: 12 6 14 2 13 8 19 5 1 11 21 10 7 3 
+Heap despues de inserciones: 2 5 1 19 6 13 11 21 8 10 7 14 3 12 
+Top (maximo): 21
+Tamaño: 14
+Despues de eliminar 21 y 5:
+Recorrido inorden: 2 7 1 13 6 11 3 19 8 10 14 12 
+Nuevo top: 19
+
+=== PROBANDO MIN-HEAP ===
+Insertando elementos: 12 6 14 2 13 8 19 5 1 11 21 10 7 3 
+Heap despues de inserciones: 12 5 6 2 13 11 21 1 14 8 10 3 19 7 
+Top (minimo): 1
+Tamaño: 14
+Despues de eliminar 1 y 2:
+Recorrido inorden: 12 6 19 5 13 11 21 3 14 8 7 10 
+Nuevo top: 3
+
+=== PROBANDO CON STRINGS (TELEVISORES) ===
+Insertando códigos de televisores: 243535 546384 123456 987654 111111 999999 
+Recorrido inorden: 243535 546384 111111 999999 123456 987654 
+Top (maximo): 999999
+Tamaño: 6
+
+Simulando operaciones del archivo:
+add 555555
+del 123456
+add 000001
+Recorrido inorden final: 243535 546384 111111 999999 555555 987654 000001 
+Top final: 999999
+Tamaño final: 7
+
+=== PROBANDO OPERACIONES MIXTAS ===
+add 10
+add 20
+add 5
+add 15
+del 20
+add 25
+del 10
+Recorrido inorden final: 15 25 5 
+Top: 25
+Tamaño: 3
+Vacio: no
+=== PRUEBAS COMPLETADAS ===
