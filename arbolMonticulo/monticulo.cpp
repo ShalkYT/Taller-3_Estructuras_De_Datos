@@ -163,7 +163,7 @@ template <typename T>
 void monticulo<T>::inordenRecursivo(size_t indice, std::list<T>& lista) const {
     if (indice >= heap.size()) return;
     
-    // CORRECTO: izquierda - raíz - derecha
+    // izquierda - raíz - derecha
     inordenRecursivo(hijoIzquierdo(indice), lista);  // izquierda
     lista.push_back(heap[indice]);                   // raíz  
     inordenRecursivo(hijoDerecho(indice), lista);    // derecha
