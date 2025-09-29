@@ -22,7 +22,7 @@ private:
 
 public:
     // Constructor
-    monticulo(bool maxHeap = true);
+    monticulo();
     
     // Operaciones básicas
     void insert(const T& valor);
