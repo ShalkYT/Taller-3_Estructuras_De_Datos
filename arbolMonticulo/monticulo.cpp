@@ -158,24 +158,16 @@ size_t monticulo<T>::size() const {
     return heap.size();
 }
 
-// Función auxiliar recursiva para recorrido inorden
-template <typename T>
-void monticulo<T>::inordenRecursivo(size_t indice, std::list<T>& lista) const {
-    if (indice >= heap.size()) return;
-    
-    // izquierda - raíz - derecha
-    inordenRecursivo(hijoIzquierdo(indice), lista);  // izquierda
-    lista.push_back(heap[indice]);                   // raíz  
-    inordenRecursivo(hijoDerecho(indice), lista);    // derecha
-}
 
 // Función pública para obtener el recorrido inorden del montículo
 template <typename T>
 void monticulo<T>::inordenEnLista(std::list<T>& lista) const {
-    // Solo realizar el recorrido si el heap no está vacío
-    if (!heap.empty()) {
-        inordenRecursivo(0, lista);  // Comenzar desde la raíz
-    }
+    // Copiar el heap y ordenarlo
+    std::vector<T> copia = heap;
+    std::sort(copia.begin(), copia.end());
+    
+    // Transferir a la lista
+    lista.assign(copia.begin(), copia.end());
 }
 
 // Vaciar completamente el montículo
