@@ -30,13 +30,8 @@ size_t monticulo<T>::hijoDerecho(size_t i) const {
 // Función de comparación que determina el orden del heap (max-heap o min-heap)
 template <typename T>
 bool monticulo<T>::comparar(const T& a, const T& b) const {
-    if (esMaxHeap) {
-        // Para max-heap: retorna true si a es menor que b (necesita intercambio)
-        return a < b;
-    } else {
-        // Para min-heap: retorna true si a es mayor que b (necesita intercambio)
-        return a > b;
-    }
+    // Para max-heap: retorna true si a es menor que b (necesita intercambio)
+    return a < b;
 }
 
 // Función para flotar un elemento hacia arriba (reparar el heap hacia arriba)
@@ -93,8 +88,8 @@ void monticulo<T>::hundir(size_t indice) {
 
 // Constructor: crea un montículo vacío especificando el tipo (max-heap o min-heap)
 template <typename T>
-monticulo<T>::monticulo(bool maxHeap) {
-    esMaxHeap = maxHeap;
+monticulo<T>::monticulo() {
+    // Constructor vacío, siempre será max-heap
 }
 
 // Insertar un nuevo elemento en el montículo
