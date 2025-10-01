@@ -11,6 +11,7 @@ class arbolAVL {
     private:
         Nodo<T>* Raiz;
 
+        // Funciones auxiliares
         int balance(Nodo<T>* n);
         void rotarDerecha(Nodo<T>* &n);
         void rotarIzquierda(Nodo<T>* &n);
@@ -19,7 +20,10 @@ class arbolAVL {
         void inOrden(Nodo<T>* n);
 
     public:
+        // Constructor
         arbolAVL();
+
+        // Operaciones básicas
         void insertar(T dato);
         void eliminar(T dato);
         T obtenerRaiz();
@@ -30,6 +34,7 @@ class arbolAVL {
 
 };
 
+// Incluir la implementación de templates
 #include "arbolAVL.cpp"
 
 #endif // ARBOLAVL_H

@@ -1,10 +1,14 @@
 #include "arbolAVL.h"
 
+// Implementacion de las funciones template
+
+// Constructor
 template <typename T>
 arbolAVL<T>::arbolAVL() {
     Raiz = nullptr;
 }
 
+// Funciones que retornan el balance entre los hijos de un nodo
 template <typename T>
 int arbolAVL<T>::balance(Nodo<T>* n){
     int i, d;
@@ -17,6 +21,7 @@ int arbolAVL<T>::balance(Nodo<T>* n){
     return i-d;
 }
 
+// Funcion de rotacion a la derecha
 template <typename T>
 void arbolAVL<T>::rotarDerecha(Nodo<T>* &n){
     Nodo<T>* aux = n->izquierda;
@@ -25,6 +30,7 @@ void arbolAVL<T>::rotarDerecha(Nodo<T>* &n){
     n = aux;
 }
 
+// Funcion de rotacion a la izquierda
 template <typename T>
 void arbolAVL<T>::rotarIzquierda(Nodo<T>* &n){
     Nodo<T>* aux = n->derecha;
@@ -33,13 +39,7 @@ void arbolAVL<T>::rotarIzquierda(Nodo<T>* &n){
     n = aux;
 }
 
-// Insertar, publico
-template <typename T>
-void arbolAVL<T>::insertar(T dato){
-    insertar(Raiz, dato);
-}
-
-// Insertar, privado
+// Funcion de insercion auxiliar, contiene toda la logica para insertar
 template <typename T>
 void arbolAVL<T>::insertar(Nodo<T>* &n, T dato){
     if(n == nullptr){
@@ -71,13 +71,13 @@ void arbolAVL<T>::insertar(Nodo<T>* &n, T dato){
     }
 }
 
-//Eliminar, publico
+// Funcion para insertar, utiliza la funcion privada insertar para insertar un valor que se le da
 template <typename T>
-void arbolAVL<T>::eliminar(T dato){
-    eliminar(Raiz, dato);
+void arbolAVL<T>::insertar(T dato){
+    insertar(Raiz, dato);
 }
 
-//Eliminar, privado
+// Funcion para eliminar un nodo, contiene toda la logica para eliminar
 template <typename T>
 void arbolAVL<T>::eliminar(Nodo<T>* &n, T dato){
     if(n == nullptr) return;
@@ -128,7 +128,13 @@ void arbolAVL<T>::eliminar(Nodo<T>* &n, T dato){
     }
 }
 
-//Eliminar, son funciones de apoyo
+// Funcion para eliminar, utiliza la funcion privada eliminar para eliminar un valor que se le da
+template <typename T>
+void arbolAVL<T>::eliminar(T dato){
+    eliminar(Raiz, dato);
+}
+
+// Funcion para obtener el valor de la raiz
 template <typename T>
 T arbolAVL<T>::obtenerRaiz() {
     if (Raiz != nullptr) {
@@ -136,6 +142,8 @@ T arbolAVL<T>::obtenerRaiz() {
     }
     throw std::runtime_error("El árbol está vacío");
 }
+
+// Funcion para obtener la altura del arbol
 template <typename T>
 int arbolAVL<T>::obtenerAltura() {
     if (Raiz != nullptr) {
@@ -143,13 +151,15 @@ int arbolAVL<T>::obtenerAltura() {
     }
     return 0; // Si el árbol está vacío, la altura es 0
 }
+
+// Funcion para obtener el balance de la raiz
 template <typename T>
 int arbolAVL<T>::obtenerBalanceRaiz() {
     return balance(Raiz);
 }
 
 
-// Recorrido inOrden privado
+// Funcion de recorrido inOrden, contiene toda la logica para el recorrido
 template <typename T>
 void arbolAVL<T>::inOrden(Nodo<T>* n) {
     if (n) {
@@ -160,7 +170,7 @@ void arbolAVL<T>::inOrden(Nodo<T>* n) {
 }
 
 
-//Recorrido inOrden publico
+// Funcion publica para el recorrido inOrden, utiliza la funcion privada inOrden
 template <typename T>
 void arbolAVL<T>::inOrden() {
     inOrden(Raiz);

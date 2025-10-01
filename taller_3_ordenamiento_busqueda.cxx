@@ -24,18 +24,18 @@
 #include "arbolRN/arbolRN.h"
 
 // TODO #11: Incluir cabecera de la STL correspondiente al montículo
-#include "monticulo.h"
+#include "arbolMonticulo/monticulo.h"
 
 typedef std::list<std::string> TList;
 
 // TODO #02: Definir árbol AVL de tipo std::string
-// typedef arbolAVL< std::string > TAVL;
+typedef arbolAVL< std::string > TAVL;
 
 // TODO #07: Definir árbol rojinegro de tipo std::string
-// typedef arbolRN< std::string > TRN;
+typedef arbolRN< std::string > TRN;
 
 // TODO #12: Definir Montículo de tipo std::string
-// typedef monticulo< std::string > THeap;
+typedef monticulo< std::string > THeap;
 
 struct ReadStats {
   std::size_t ops_total   = 0;
