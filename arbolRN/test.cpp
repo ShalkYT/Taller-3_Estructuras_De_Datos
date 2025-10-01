@@ -2,7 +2,7 @@
 #include "arbolRN.h"
 
 int main() {
-    arbolRN arbol;
+    arbolRN<int> arbol;
 
     std::cout << "Insertando elementos en el AVL..." << std::endl;
     int valores[] = {10, 20, 30, 40, 50, 25};

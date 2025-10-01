@@ -1,16 +1,19 @@
 #include "arbolRN.h"
 
-void arbolRN::insertar(int dato){
+template <typename T>
+void arbolRN<T>::insertar(T dato){
     elementos.insert(dato);
 }
 
-void arbolRN::eliminar(int dato){
+template <typename T>
+void arbolRN<T>::eliminar(T dato){
     elementos.erase(dato);
 }
 
-void arbolRN::inOrden(){
-    std::set<int>::iterator it;
-    for(it = elementos.begin(); it != elementos.end(); ++it){
+template <typename T>
+void arbolRN<T>::inOrden(){
+    typename std::set<T>::iterator it = elementos.begin();
+    for(; it != elementos.end(); ++it){
         std::cout << *it << ", ";
     }
     std::cout << std::endl;

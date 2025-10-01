@@ -4,14 +4,17 @@
 #include <iostream>
 #include <set>
 
+template <typename T>
 class arbolRN{
 private:
-    std::set<int> elementos;
+    std::set<T> elementos;
 public:
-    void insertar(int dato);
-    void eliminar(int dato);
+    void insertar(T dato);
+    void eliminar(T dato);
 
     void inOrden();
 };
+
+#include "arbolRN.cpp"
 
 #endif
