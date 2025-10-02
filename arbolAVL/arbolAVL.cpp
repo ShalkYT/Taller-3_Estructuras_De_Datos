@@ -41,13 +41,13 @@ void arbolAVL<T>::rotarIzquierda(Nodo<T>* &n){
 
 // Funcion de insercion auxiliar, contiene toda la logica para insertar
 template <typename T>
-void arbolAVL<T>::insertar(Nodo<T>* &n, T dato){
+void arbolAVL<T>::insert(Nodo<T>* &n, T dato){
     if(n == nullptr){
         n = new Nodo<T>(dato);
     }else if(dato < n->dato){
-        insertar(n->izquierda, dato);
+        insert(n->izquierda, dato);
     }else if(dato > n->dato){
-        insertar(n->derecha, dato);
+        insert(n->derecha, dato);
     }else{
         return;
     }
@@ -73,19 +73,19 @@ void arbolAVL<T>::insertar(Nodo<T>* &n, T dato){
 
 // Funcion para insertar, utiliza la funcion privada insertar para insertar un valor que se le da
 template <typename T>
-void arbolAVL<T>::insertar(T dato){
-    insertar(Raiz, dato);
+void arbolAVL<T>::insert(T dato){
+    insert(Raiz, dato);
 }
 
 // Funcion para eliminar un nodo, contiene toda la logica para eliminar
 template <typename T>
-void arbolAVL<T>::eliminar(Nodo<T>* &n, T dato){
+void arbolAVL<T>::erase(Nodo<T>* &n, T dato){
     if(n == nullptr) return;
 
     if(dato < n->dato){
-        eliminar(n->izquierda, dato);
+        erase(n->izquierda, dato);
     }else if(dato > n->dato){
-        eliminar(n->derecha, dato);
+        erase(n->derecha, dato);
     }else{
         if(n->izquierda == nullptr || n->derecha == nullptr){
             Nodo<T>* temp = n->izquierda ? n->izquierda : n->derecha;
@@ -103,7 +103,7 @@ void arbolAVL<T>::eliminar(Nodo<T>* &n, T dato){
                 temp = temp->izquierda;
             }
             n->dato = temp->dato;
-            eliminar(n->derecha, temp->dato);
+            erase(n->derecha, temp->dato);
         }
     }
 
@@ -130,8 +130,8 @@ void arbolAVL<T>::eliminar(Nodo<T>* &n, T dato){
 
 // Funcion para eliminar, utiliza la funcion privada eliminar para eliminar un valor que se le da
 template <typename T>
-void arbolAVL<T>::eliminar(T dato){
-    eliminar(Raiz, dato);
+void arbolAVL<T>::erase(T dato){
+    erase(Raiz, dato);
 }
 
 // Funcion para obtener el valor de la raiz
@@ -161,18 +161,19 @@ int arbolAVL<T>::obtenerBalanceRaiz() {
 
 // Funcion de recorrido inOrden, contiene toda la logica para el recorrido
 template <typename T>
-void arbolAVL<T>::inOrden(Nodo<T>* n) {
+void arbolAVL<T>::inordenRecursivo(Nodo<T>* n, std::list<T>& lista) {
     if (n) {
-        inOrden(n->izquierda);
-        std::cout << n->dato << " ";
-        inOrden(n->derecha);
+        inordenRecursivo(n->izquierda, lista);
+        lista.push_back(n->dato);
+        inordenRecursivo(n->derecha, lista);
     }
 }
 
 
 // Funcion publica para el recorrido inOrden, utiliza la funcion privada inOrden
 template <typename T>
-void arbolAVL<T>::inOrden() {
-    inOrden(Raiz);
+void arbolAVL<T>::inordenEnLista(std::list<T>& lista) {
+    lista.clear();
+    inordenRecursivo(Raiz, lista);
     std::cout << std::endl;
 }

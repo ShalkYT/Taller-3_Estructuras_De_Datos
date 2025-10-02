@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <set>
+#include <list>
 
 template <typename T>
 class arbolRN{
@@ -13,11 +14,11 @@ public:
     // Funciones para la logica del arbolRN en nuestro codigo
 
     // Funciones basicas
-    void insertar(T dato);
-    void eliminar(T dato);
+    void insert(T dato);
+    void erase(T dato);
 
     // Funciones de recorrido
-    void inOrden();
+    void inordenEnLista(std::list<T>& lista);
 };
 
 #include "arbolRN.cpp"

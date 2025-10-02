@@ -2,6 +2,7 @@
 #define ARBOLAVL_H
 
 #include <iostream>
+#include <list>
 
 #include "nodo.h"
 
@@ -15,21 +16,21 @@ class arbolAVL {
         int balance(Nodo<T>* n);
         void rotarDerecha(Nodo<T>* &n);
         void rotarIzquierda(Nodo<T>* &n);
-        void insertar(Nodo<T>* &n, T dato);
-        void eliminar(Nodo<T>* &N, T dato);
-        void inOrden(Nodo<T>* n);
+        void insert(Nodo<T>* &n, T dato);
+        void erase(Nodo<T>* &N, T dato);
+        void inordenRecursivo(Nodo<T>* n, std::list<T>& lista);
 
     public:
         // Constructor
         arbolAVL();
 
         // Operaciones básicas
-        void insertar(T dato);
-        void eliminar(T dato);
+        void insert(T dato);
+        void erase(T dato);
         T obtenerRaiz();
         int obtenerAltura();
         int obtenerBalanceRaiz();
-        void inOrden();
+        void inordenEnLista(std::list<T>& lista);
 
 
 };
