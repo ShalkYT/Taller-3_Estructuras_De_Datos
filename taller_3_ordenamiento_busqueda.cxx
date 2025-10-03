@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
   THeap miMonticulo;
 
   std::cout << "\nLeyendo archivo: " << archivo << "\n";
-  /***
+  
   ReadStats statsAVL;
   std::chrono::steady_clock::time_point t0AVL = std::chrono::steady_clock::now();
   bool lecturaAVL = LeerArbol(miArbolAVL, archivo, medirCadaOperacion, statsAVL);
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
   double tiempoLecturaAVL = std::chrono::duration<double>(t1AVL - t0AVL).count();
   statsAVL.secs_total = tiempoLecturaAVL;
   std::cout << "\nLectura de archivo " << (lecturaAVL ? "exitosa" : "fallida") << " para árbol AVL.\n";
-  */
+
 
   ReadStats statsRN;
   std::chrono::steady_clock::time_point t0RN = std::chrono::steady_clock::now();
@@ -181,10 +181,10 @@ int main(int argc, char *argv[])
   // TList::iterator itAVL  = inordenAVL.begin();
   TList::iterator itRN   = inordenRN.begin();
   TList::iterator itHeap = inordenHeap.begin();
-  
+  TList::iterator itAVL = inordenAVL.begin();
   // TODO #17: Recorrer las estructuras lineales y comparar elemento a elemento la igualdad o desigualdad
   bool todosIguales = true;
-  /*
+  
   for (std::size_t i = 0; i < minSize; ++i, ++itAVL, ++itRN, ++itHeap) {
     if (!(*itAVL == *itRN && *itRN == *itHeap)) {
       std::cout << " Diferencia en la posicion " << i
@@ -194,10 +194,10 @@ int main(int argc, char *argv[])
         todosIguales = false;
     }
   }
-  */
+  
 
   // TODO #18: Informar si los árboles coinciden en la totalidad de los elementos teniendo en cuenta su posición
-  /*
+  
   if (todosIguales && sizeAVL == sizeRN && sizeRN == sizeHeap) {
     std::cout << " ==> Coincidencia total: los tres recorridos inorden son idénticos.\n";
   } else if (todosIguales) {
@@ -205,7 +205,7 @@ int main(int argc, char *argv[])
   } else {
     std::cout << " ==> No hay coincidencia total entre las tres estructuras.\n";
   }
-  */
+
   return (0);
 }
 
