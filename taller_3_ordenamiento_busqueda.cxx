@@ -105,12 +105,16 @@ int main(int argc, char *argv[])
   // TODO #13: Definir variable tipo Montículo.
   THeap miMonticulo;
 
+  std::cout << "\nLeyendo archivo: " << archivo << "\n";
+  /***
   ReadStats statsAVL;
   std::chrono::steady_clock::time_point t0AVL = std::chrono::steady_clock::now();
   bool lecturaAVL = LeerArbol(miArbolAVL, archivo, medirCadaOperacion, statsAVL);
   std::chrono::steady_clock::time_point t1AVL = std::chrono::steady_clock::now();
   double tiempoLecturaAVL = std::chrono::duration<double>(t1AVL - t0AVL).count();
   statsAVL.secs_total = tiempoLecturaAVL;
+  std::cout << "\nLectura de archivo " << (lecturaAVL ? "exitosa" : "fallida") << " para árbol AVL.\n";
+  */
 
   ReadStats statsRN;
   std::chrono::steady_clock::time_point t0RN = std::chrono::steady_clock::now();
@@ -118,6 +122,7 @@ int main(int argc, char *argv[])
   std::chrono::steady_clock::time_point t1RN = std::chrono::steady_clock::now();
   double tiempoLecturaRN = std::chrono::duration<double>(t1RN - t0RN).count();
   statsRN.secs_total = tiempoLecturaRN;
+  std::cout << "Lectura de archivo " << (lecturaRN ? "exitosa" : "fallida") << " para árbol Rojo-N.\n";
 
   ReadStats statsHeap;
   std::chrono::steady_clock::time_point t0Heap = std::chrono::steady_clock::now();
@@ -125,6 +130,7 @@ int main(int argc, char *argv[])
   std::chrono::steady_clock::time_point t1Heap = std::chrono::steady_clock::now();
   double tiempoLecturaHeap = std::chrono::duration<double>(t1Heap - t0Heap).count();
   statsHeap.secs_total = tiempoLecturaHeap;
+  std::cout << "Lectura de archivo " << (lecturaHeap ? "exitosa" : "fallida") << " para montículo.\n";
 
   /*
     =============================================
@@ -150,7 +156,7 @@ int main(int argc, char *argv[])
   std::size_t minSize = std::min({sizeAVL, sizeRN, sizeHeap});
 
   std::cout << "\n================== Resultados de la lectura ==================\n";
-  ImprimirResumen("Árbol AVL", statsAVL, medirCadaOperacion);
+  // ImprimirResumen("Árbol AVL", statsAVL, medirCadaOperacion);
   ImprimirResumen("Árbol Rojo-Negro", statsRN, medirCadaOperacion);
   ImprimirResumen("Montículo (Heap)", statsHeap, medirCadaOperacion);
 
@@ -172,12 +178,13 @@ int main(int argc, char *argv[])
   */
 
   // TODO #16: Crear iteradores para recorrer cada una de las estructuras lineales 
-  TList::iterator itAVL  = inordenAVL.begin();
+  // TList::iterator itAVL  = inordenAVL.begin();
   TList::iterator itRN   = inordenRN.begin();
   TList::iterator itHeap = inordenHeap.begin();
   
   // TODO #17: Recorrer las estructuras lineales y comparar elemento a elemento la igualdad o desigualdad
   bool todosIguales = true;
+  /*
   for (std::size_t i = 0; i < minSize; ++i, ++itAVL, ++itRN, ++itHeap) {
     if (!(*itAVL == *itRN && *itRN == *itHeap)) {
       std::cout << " Diferencia en la posicion " << i
@@ -187,8 +194,10 @@ int main(int argc, char *argv[])
         todosIguales = false;
     }
   }
+  */
 
   // TODO #18: Informar si los árboles coinciden en la totalidad de los elementos teniendo en cuenta su posición
+  /*
   if (todosIguales && sizeAVL == sizeRN && sizeRN == sizeHeap) {
     std::cout << " ==> Coincidencia total: los tres recorridos inorden son idénticos.\n";
   } else if (todosIguales) {
@@ -196,7 +205,7 @@ int main(int argc, char *argv[])
   } else {
     std::cout << " ==> No hay coincidencia total entre las tres estructuras.\n";
   }
-
+  */
   return (0);
 }
 

@@ -27,3 +27,4 @@ resultados = procesar_operaciones(archivo)
 
 # Imprimir los valores que quedan en la lista
 print(resultados)
+print(len(resultados))
