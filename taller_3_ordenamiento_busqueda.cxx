@@ -157,6 +157,7 @@ int main(int argc, char *argv[])
 
   std::cout << "\n================== Resultados de la lectura ==================\n";
   // ImprimirResumen("Árbol AVL", statsAVL, medirCadaOperacion);
+  ImprimirResumen("Árbol AVL", statsAVL, medirCadaOperacion);
   ImprimirResumen("Árbol Rojo-Negro", statsRN, medirCadaOperacion);
   ImprimirResumen("Montículo (Heap)", statsHeap, medirCadaOperacion);
 
