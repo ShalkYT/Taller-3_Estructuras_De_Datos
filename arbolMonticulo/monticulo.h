@@ -27,6 +27,7 @@ public:
     // Operaciones básicas
     void insert(const T& valor);
     void erase(const T& valor);
+    bool existe(const T& valor);
     T top() const;
     bool empty() const;
     size_t size() const;
