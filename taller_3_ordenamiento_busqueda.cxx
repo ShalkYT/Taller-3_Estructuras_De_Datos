@@ -149,6 +149,11 @@ int main(int argc, char *argv[])
 
   std::size_t minSize = std::min({sizeAVL, sizeRN, sizeHeap});
 
+  std::cout << "\n================== Resultados de la lectura ==================\n";
+  ImprimirResumen("Árbol AVL", statsAVL, medirCadaOperacion);
+  ImprimirResumen("Árbol Rojo-Negro", statsRN, medirCadaOperacion);
+  ImprimirResumen("Montículo (Heap)", statsHeap, medirCadaOperacion);
+
   std::cout << "\n------------------ Resumen de tamaños (inorden) ------------------\n";
   std::cout << " AVL               : " << sizeAVL  << " elementos\n";
   std::cout << " Árbol Rojo-Negro  : " << sizeRN   << " elementos\n";
