@@ -91,12 +91,25 @@ template <typename T>
 monticulo<T>::monticulo() {
     // Constructor vacío, siempre será max-heap
 }
+bool existe(const T& valor) const{
+    for (size_t i= 0; i< heap.size();++i){
+        if(heap[i] == valor){
+            return true;
+        }
+    }
+    return false;
+}
 
 // Insertar un nuevo elemento en el montículo
 template <typename T>
 void monticulo<T>::insert(const T& valor) {
     // Agregar al final del vector
+    if(existe(valor)){
+        std::cout<<"ADVERTENCIA: Elemento duplicado '" <<valor << "' no insertado"<<std::endl;
+        return
+    }
     heap.push_back(valor);
+    elementos.insert(valor);
     size_t indice = heap.size() - 1;
     // Flotar el elemento para mantener la propiedad del heap
     flotar(indice);
