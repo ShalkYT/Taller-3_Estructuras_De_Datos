@@ -18,7 +18,7 @@ class arbolAVL {
         void rotarIzquierda(Nodo<T>* &n);
         void insert(Nodo<T>* &n, T dato);
         void erase(Nodo<T>* &N, T dato);
-        void inordenRecursivo(Nodo<T>* n, std::list<T>& lista);
+        void inOrden(Nodo<T>* n, std::list<T>& lista);
 
     public:
         // Constructor

@@ -176,7 +176,7 @@ int arbolAVL<T>::obtenerBalanceRaiz() {
 
 // Funcion de recorrido inOrden iterativa
 template <typename T>
-void arbolAVL<T>::inordenRecursivo(Nodo<T>* raiz, std::list<T>& lista) {
+void arbolAVL<T>::inOrden(Nodo<T>* raiz, std::list<T>& lista) {
     if(raiz == nullptr) return;
 
     std::stack<Nodo<T>*> pila;
@@ -205,5 +205,5 @@ void arbolAVL<T>::inordenRecursivo(Nodo<T>* raiz, std::list<T>& lista) {
 template <typename T>
 void arbolAVL<T>::inordenEnLista(std::list<T>& lista) {
     lista.clear();
-    inordenRecursivo(Raiz, lista);
+    inOrden(Raiz, lista);
 }
