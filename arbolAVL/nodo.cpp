@@ -14,7 +14,16 @@ int Nodo<T>::obtenerAltura(){
 
 template <typename T>
 void Nodo<T>::actualizarAltura(){
-    int altIzq = (izquierda != nullptr) ? izquierda->altura : 0;
-    int altDer = (derecha != nullptr) ? derecha->altura : 0;
+    int altIzq = 0;
+    int altDer = 0;
+    
+    if (izquierda != nullptr) {
+        altIzq = izquierda->altura;
+    }
+    
+    if (derecha != nullptr) {
+        altDer = derecha->altura;
+    }
+    
     altura = 1 + std::max(altIzq, altDer);
 }
