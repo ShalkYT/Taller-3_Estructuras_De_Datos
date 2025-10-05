@@ -107,6 +107,7 @@ int main(int argc, char *argv[])
 
   std::cout << "\nLeyendo archivo: " << archivo << "\n";
   
+  // TODO #04: Llamar la función que lee el archivo y llena el árbol AVL, la implementacion esta en arbolAVL.cpp
   ReadStats statsAVL;
   std::chrono::steady_clock::time_point t0AVL = std::chrono::steady_clock::now();
   bool lecturaAVL = LeerArbol(miArbolAVL, archivo, medirCadaOperacion, statsAVL);
@@ -115,7 +116,7 @@ int main(int argc, char *argv[])
   statsAVL.secs_total = tiempoLecturaAVL;
   std::cout << "\nLectura de archivo " << (lecturaAVL ? "exitosa" : "fallida") << " para árbol AVL.\n";
 
-
+  // TODO #09: Llamar la función que lee el archivo y llena el árbol rojinegro, la implementacion esta en arbolRN.cpp
   ReadStats statsRN;
   std::chrono::steady_clock::time_point t0RN = std::chrono::steady_clock::now();
   bool lecturaRN = LeerArbol(miArbolRN, archivo, medirCadaOperacion, statsRN);
@@ -124,6 +125,7 @@ int main(int argc, char *argv[])
   statsRN.secs_total = tiempoLecturaRN;
   std::cout << "Lectura de archivo " << (lecturaRN ? "exitosa" : "fallida") << " para árbol Rojo-N.\n";
 
+  // TODO #14: Llamar la función que lee el archivo y llena el montículo, la implementacion esta en monticulo.cpp
   ReadStats statsHeap;
   std::chrono::steady_clock::time_point t0Heap = std::chrono::steady_clock::now();
   bool lecturaHeap = LeerArbol(miMonticulo, archivo, medirCadaOperacion, statsHeap);

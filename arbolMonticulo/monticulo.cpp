@@ -102,6 +102,7 @@ bool monticulo<T>::existe(const T& valor){
     return false;
 }
 
+// TODO #14 : Implementar las funciones de insercion y eiminacion del monticulo
 // Insertar un nuevo elemento en el montículo
 template <typename T>
 void monticulo<T>::insert(const T& valor) {

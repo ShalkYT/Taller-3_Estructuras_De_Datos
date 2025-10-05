@@ -2,6 +2,7 @@
 
 // Implementaciond de las funciones template
 
+// TODO #09: Implementar las funcion de insercion y eliminación en el arbolRN
 // Funcion de insertar un dato en el arbolRN
 template <typename T>
 void arbolRN<T>::insert(T dato){
